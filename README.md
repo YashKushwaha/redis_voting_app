@@ -65,7 +65,7 @@ docker-compose up --build
 
 ### 📊 Dashboard
 
-Visit `http://localhost:5000`
+Visit `http://localhost:8080`
 
 ## 🧼 Clean Up
 
