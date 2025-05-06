@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Voting Dashboard</title>
+    <script>
+        async function fetchResults() {
+            const response = await fetch('/results');
+            const data = await response.json();
+            let results = '';
+            for (const [option, count] of Object.entries(data)) {
+                results += `<p>${option}: ${count}</p>`;
+            }
+            document.getElementById('results').innerHTML = results;
+        }
+        setInterval(fetchResults, 1000);
+        window.onload = fetchResults;
+    </script>
+</head>
+<body>
+    <h1>Live Votes</h1>
+    <div id="results">Loading...</div>
+</body>
+</html>
